@@ -20,14 +20,27 @@ namespace Codewars_EvilorOdious
             var actual = EvilOrOdious.Evil(1);
             Assert.AreEqual("It's Odious!", actual);
         }
+
+        [TestMethod]
+        public void Input_2_Should_Be_ItsOdious()
+        {
+            var actual = EvilOrOdious.Evil(2);
+            Assert.AreEqual("It's Odious!",actual);
+        }
+
+        [TestMethod]
+        public void Input_3_Should_Be_ItsEvil()
+        {
+            var actual = EvilOrOdious.Evil(3);
+            Assert.AreEqual("It's Evil!", actual);
+        }
     }
 
     public class EvilOrOdious
     {
         public static string Evil(int n)
         {
-            if (n == 0) return "It's Evil!";
-            return Convert.ToString(n, 2).Count(x => x == 1) % 2 == 1 ? "It's Evil!": "It's Odious!";
+            return Convert.ToString(n, 2).Count(x => x=='1') % 2 == 0 ? "It's Evil!" : "It's Odious!";
         }
     }
 }
