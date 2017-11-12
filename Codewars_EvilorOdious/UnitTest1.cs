@@ -26,7 +26,8 @@ namespace Codewars_EvilorOdious
     {
         public static string Evil(int n)
         {
-            return Convert.ToString(n, 2).Count(x => x == 1) % 2 == 0 ? "It's Evil!": "It's Odious!";
+            if (n == 0) return "It's Evil!";
+            return Convert.ToString(n, 2).Count(x => x == 1) % 2 == 1 ? "It's Evil!": "It's Odious!";
         }
     }
 }
